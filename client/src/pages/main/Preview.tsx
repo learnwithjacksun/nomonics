@@ -130,8 +130,8 @@ const Preview = () => {
             Watch Advert to receive coin
           </button>
 
-          <div className="bg-primary/10">
-            <div className="main">
+          <div className="bg-primary/10 rounded-xl">
+            <div className="main py-6">
               <PDFViewer fileUrl={episode?.pdf as string} />
             </div>
           </div>

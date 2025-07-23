@@ -25,7 +25,7 @@ export default function PDFViewer({ fileUrl }: ComicPreviewProps) {
         file={fileUrl}
         onLoadSuccess={onDocumentLoadSuccess}
         onLoadError={(error) => console.error('Error loading PDF:', error)}
-        className="w-full"
+        className="w-full h-full"
       >
         {Array.from(new Array(numPages), (_, index) => (
           <Page key={index + 1} pageNumber={index + 1} />

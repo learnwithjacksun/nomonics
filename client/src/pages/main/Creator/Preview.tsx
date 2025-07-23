@@ -58,9 +58,9 @@ const Preview = () => {
 
   return (
     <>
-      <DashboardLayout>
+      <DashboardLayout title="Preview" >
         <div className="space-y-10 pb-10">
-          <div className="bg-[#fae8e6] md:py-0">
+          <div className="bg-[#fae8e6] md:py-0 rounded-xl">
             <div className="min-h-[160px]  main flex items-center md:justify-between justify-center">
               {!isOnlyOneEpisode && (
                 <div className="hidden md:block">
@@ -126,12 +126,10 @@ const Preview = () => {
             )}
           </div>
 
-          <button className="w-full layout border border-secondary text-secondary h-12 rounded-md">
-            Watch Advert to receive coin
-          </button>
+         
 
-          <div className="bg-primary/10">
-            <div className="main">
+          <div className="bg-primary/10 rounded-xl">
+            <div className="main py-6">
               <PDFViewer fileUrl={episode?.pdf as string} />
             </div>
           </div>
