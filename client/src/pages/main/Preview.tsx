@@ -1,7 +1,7 @@
 import { MainLayout } from "@/layouts";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Comment } from "@/components/main";
-import { useParams, useSearchParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { useCreateComic } from "@/hooks";
 import { useQuery } from "@tanstack/react-query";
 import { PDFViewer } from "@/components/ui";
@@ -21,7 +21,23 @@ const Preview = () => {
     (episode) => episode.episodeNumber === Number(episodeNumber)
   );
 
-  if (!episode) return null;
+  if (!episode) {
+    return (
+      <MainLayout>
+        <div className="main">
+          <div className="flex flex-col items-center justify-center h-screen">
+            <h1 className="text-2xl font-bold">Episode not found</h1>
+            <p className="text-sm text-gray-500">
+              The episode you are looking for does not exist.
+            </p>
+            <Link to="/" className="text-sm text-blue-500">
+              Go back to home
+            </Link>
+          </div>
+        </div>
+      </MainLayout>
+    )
+  };
 
   const previousEpisodeNumber = episode.episodeNumber - 1;
   const nextEpisodeNumber = episode.episodeNumber + 1;
