@@ -136,7 +136,6 @@ const useAuth = () => {
       } else {
         setUser(null);
         setToken(null);
-        toast.error(response.data.message);
         navigate("/auth/login");
       }
     } catch (error) {
