@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+ --primary: #fdc700;
+  --secondary: #4b2e00;
+  --background: #fefefe;
+  --foreground: #f7f7f7;
+  --main: #444;
+  --muted: #999;
+  --line: #ddd;
+}
+
+
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-comic: 'Comic Relief', cursive;
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-main: var(--main);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+}
+
+* {
+  @apply outline-none;
+}
+
+html {
+  @apply bg-background text-main font-sans scroll-smooth;
+}
+
+.main {
+  @apply max-w-[90%] 2xl:max-w-[1280px] mx-auto;
+}
+
+.layout {
+  @apply max-w-[90%] md:max-w-[700px] mx-auto;
+}
+
+.center {
+  @apply flex items-center justify-center;
+}
+
+button,
+.btn {
+  @apply text-sm cursor-pointer font-semibold tracking-wide flex items-center justify-center gap-2 disabled:opacity-50;
+}
+
+.btn-primary {
+  @apply bg-primary text-[#212121];
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white;
+}
+
+.f {
+  color: #ff0040;
+}
+
+.input {
+  @apply bg-foreground text-sm border border-line rounded-lg px-4 h-10 font-light focus:outline-none focus:ring-4 focus:ring-primary/20 focus:border-primary invalid:border-red-500;
+}
+.message {
+  @apply bg-foreground text-sm border border-line rounded-lg px-4 py-2 font-light focus:outline-none focus:ring-4 focus:ring-primary/20 focus:border-primary invalid:border-red-500;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  @apply hidden;
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  @apply hidden;
+}
+
+.goog-te-combo{
+  background: var(--secondary);
+  padding: .5em;
+  border-radius: .5em;
+  color: var(--main);
+  border: 1px solid var(--line);
+  margin-top: 2em;
+}
+
+.auth{
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url("./auth.svg");
+  background-position: center;
+  background-size: cover;
+}

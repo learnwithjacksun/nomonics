@@ -1,0 +1,10 @@
+export {default as Header} from './Header';
+export {default as Footer} from './Footer';
+export {default as Hero} from './Hero';
+export {default as NewReleases} from './NewReleases';
+export {default as Banner} from './Banner';
+export {default as MostViewed} from './MostViewed';
+export {default as FreeComic} from './FreeComic';
+export {default as MobileMenu} from './MobileMenu';
+export {default as EpisodeCard} from './Episode';
+export {default as Comment} from "./Comment"
