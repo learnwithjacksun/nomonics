@@ -18,7 +18,7 @@ const ComicCard = ({ comic }: { comic: IComic }) => {
   if (!comic) return null;
   return (
     <>
-      <div className="relative md:min-h-[350px] min-h-[200px] w-full" onClick={handleNavigate}>
+      <div className="relative md:min-h-[350px] h-[250px] w-full" onClick={handleNavigate}>
         <img
           src={comic.coverImage}
           alt={comic.title}

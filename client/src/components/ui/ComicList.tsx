@@ -6,7 +6,7 @@ import ComicCard from "./ComicCard";
 const ComicList = ({ comics }: { comics: IComic[] | undefined }) => {
   return (
     <div className="space-y-[24px]">
-    {comics && comics.length > 0 && <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 max-[480px]:grid-cols-1 gap-4 mt-10">
+    {comics && comics.length > 0 && <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 max-[480px]:grid-cols-2 gap-4 mt-10">
        {comics && comics.length > 0 && comics.map((comic) => (
         <ComicCard comic={comic} key={comic.id} />
        ))}
