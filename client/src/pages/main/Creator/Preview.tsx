@@ -131,7 +131,9 @@ const Preview = () => {
           </button>
 
           <div className="bg-primary/10">
-            <PDFViewer fileUrl={episode?.pdf as string} />
+            <div className="main">
+              <PDFViewer fileUrl={episode?.pdf as string} />
+            </div>
           </div>
 
           <div className=" border-t border-line py-10">

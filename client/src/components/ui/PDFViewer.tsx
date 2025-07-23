@@ -20,11 +20,12 @@ export default function PDFViewer({ fileUrl }: ComicPreviewProps) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center w-full gap-4">
+    <div className="flex flex-col items-center justify-center w-full gap-4 overflow-x-scroll">
       <Document
         file={fileUrl}
         onLoadSuccess={onDocumentLoadSuccess}
         onLoadError={(error) => console.error('Error loading PDF:', error)}
+        className="w-full"
       >
         {Array.from(new Array(numPages), (_, index) => (
           <Page key={index + 1} pageNumber={index + 1} />
