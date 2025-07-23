@@ -5,7 +5,6 @@ import connectDB from "./config/database.js";
 import process from "process";
 import { userRouter, authRouter, comicRouter } from "./routes/index.js";
 
-
 const app = express();
 const PORT = process.env.PORT || 5001;
 app.use(express.json());
@@ -13,14 +12,17 @@ app.use(cookieParser());
 
 connectDB();
 
-const allowedOrgins = ["http://localhost:5173", "http://localhost:5000"];
+const allowedOrgins = [
+  "http://localhost:5173",
+  "http://localhost:5000",
+  "https://nomonics.netlify.app",
+];
 app.use(
   cors({
     origin: allowedOrgins,
     credentials: true,
   })
 );
-
 
 app.get("/", (_req, res) => {
   res.json({
@@ -29,7 +31,6 @@ app.get("/", (_req, res) => {
     status: 200,
   });
 });
-
 
 app.use("/v1/user", userRouter);
 app.use("/v1/auth", authRouter);
