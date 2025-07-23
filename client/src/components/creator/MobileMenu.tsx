@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { ButtonWithLoader } from "../ui";
 import { X } from "lucide-react";
 import { motion } from "framer-motion";
+import { useAuth } from "@/hooks";
 
 interface MobileMenuProps {
   onClose: () => void;
@@ -11,6 +12,7 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ onClose, isOpen }: MobileMenuProps) => {
+  const { logout, isLoading } = useAuth();
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -65,7 +67,8 @@ const MobileMenu = ({ onClose, isOpen }: MobileMenuProps) => {
         <ButtonWithLoader
           initialText="Logout"
           loadingText="Logging out..."
-          onClick={() => {}}
+          onClick={() => {logout()}}
+          loading={isLoading}
           className="mt-auto bg-red-500 text-white h-11"
         />
       </motion.div>

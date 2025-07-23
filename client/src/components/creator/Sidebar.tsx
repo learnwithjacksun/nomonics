@@ -1,8 +1,10 @@
 import { navLinksCreator } from "@/constants/data"
 import { NavLink } from "react-router-dom"
 import { ButtonWithLoader } from "../ui"
+import { useAuth } from "@/hooks"
 
 const Sidebar = () => {
+  const { logout, isLoading } = useAuth();
   return (
     <div className="border-r border-line h-full flex flex-col">
       <div className="h-[70px] w-full bg-secondary">
@@ -22,7 +24,7 @@ const Sidebar = () => {
         ))}
       </ul>
 
-      <ButtonWithLoader initialText="Logout" loadingText="Logging out..." onClick={() => {}} className="mt-auto bg-red-500 text-white h-11" />
+      <ButtonWithLoader loading={isLoading} initialText="Logout" loadingText="Logging out..." onClick={() => {logout()}} className="mt-auto bg-red-500 text-white h-11" />
     </div>
   )
 }
